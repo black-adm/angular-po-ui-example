@@ -8,9 +8,56 @@
   </po-menu>
 
   <div class="po-mt-2">
-    <po-page-default
-      p-title="Inicio"
-      class="po-font-title">
+    <po-page-default>
+      <div class="po-row">
+        <h1 style="margin-left: 4rem; margin-top: 1.5rem;">
+          Dashboard dos últimos anos
+        </h1>
+
+        <div class="po-row">
+          <po-chart
+            class="po-md-6 po-mt-2"
+            [p-options]="chartAreaOptions"
+            [p-categories]="chartAreaCategories"
+            [p-series]="chartAreaSeries">
+          </po-chart>
+
+          <div class="po-md-6 po-mt-2">
+            <po-widget [p-height]="198">
+              <div class="po-font-title po-text-center po-pt-5">
+                R$ 200.00,00
+              </div>
+              <div class="po-text-center">
+                Vendas realizadas no último semestre.
+              </div>
+            </po-widget>
+
+            <po-widget [p-height]="198">
+              <div class="po-font-title po-text-center po-pt-5">
+                TOP 10
+              </div>
+              <div class="po-text-center">
+                No ranking de vendedores do ramo de portas e esquadrias no
+                Mercado Livre.
+              </div>
+            </po-widget>
+          </div>
+        </div>
+      </div>
+
+      <div class="po-row">
+        <po-container class="po-lg-12 po-mt-2 po-mb-4">
+          <div class="po-font-text-bold">
+            Últimas vendas da semana ( 24/01/2024 )
+          </div>
+
+          <po-table
+            p-container="shadow"
+            [p-items]="items"
+            [p-hide-table-search]="false">
+          </po-table>
+        </po-container>
+      </div>
     </po-page-default>
   </div>
 </div>
